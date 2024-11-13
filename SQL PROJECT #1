@@ -1,0 +1,19 @@
+-- First I intended to lay out the chart to get a full view of what I would be working with
+SELECT *
+FROM superstore;
+-- Here I am organizing the Data by showing the items within the table with a descending price range
+SELECT item_name, price 
+FROM superstore
+ORDER BY price desc;
+-- Here I use the "SUM" function to determine the total units the superstore has in stock
+SELECT SUM(stock_quantity) AS total_units
+FROM superstore;
+-- Here I isolate the "Kitchen Supplies" and use the function "WHERE" to determine the average price 
+SELECT AVG(price) AS Kitchen_supply_average
+FROM superstore
+WHERE category="Kitchen Supplies";
+
+-- If I needed to determine how many total security cameras were left in stock, here is how I would do it
+SELECT SUM(stock_quantity) AS Total_Security_Cameras
+FROM superstore
+WHERE item_name="Smart Home Security Camera";
