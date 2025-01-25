@@ -1,0 +1,5 @@
+For this Project my goal was to take on a larger data set and deal with revenue calculations and product management. 
+
+# With larger data sets like this one, I wanted to make a point of making sure there were no repeated values, where the sales were most popular, that I was able to be aware of certain sales in certain locations, and what products were responsible for the larger chunks of revenue.
+
+For this first query, I wanted to determine how many unique orders were made in January to determine
