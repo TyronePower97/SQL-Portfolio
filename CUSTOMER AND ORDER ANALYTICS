@@ -3,3 +3,38 @@ For this Project my goal was to take on a larger data set and deal with revenue 
 # With larger data sets like this one, I wanted to make a point of making sure there were no repeated values, where the sales were most popular, that I was able to be aware of certain sales in certain locations, and what products were responsible for the larger chunks of revenue.
 
 For this first query, I wanted to determine how many unique orders were made in January to determine
+
+
+SELECT distinct location, count(orderID)
+FROM BIT_DB.JanSales
+WHERE location LIKE '%NY%'
+AND length(orderid) = 6 
+AND orderid <> 'Order ID'
+GROUP BY location
+HAVING count(orderID)>2 
+
+
+SELECT SUM(quantity) as quantity, product
+FROM BIT_DB.FebSales
+WHERE product like '%Headphone%'
+group by product
+
+SELECT sum(quantity*price)/count(cust.acctnum) as 'Average spending'
+FROM BIT_DB.FebSales Feb
+LEFT JOIN BIT_DB.customers cust
+ON FEB.orderid=cust.order_id
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID';
+
+SELECT sum(quantity)/count(cust.acctnum)
+FROM BIT_DB.FebSales FEB
+LEFT JOIN BIT_DB.customers cust
+ON FEB.orderid=cust.order_id
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID';
+
+SELECT product, sum(quantity*price)
+FROM BIT_DB.JanSales
+GROUP BY product
+ORDER BY sum(quantity*price) desc
+LIMIT 1;
