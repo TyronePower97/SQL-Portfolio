@@ -1,1 +1,7 @@
+My goal for this project was to view the given dataset as a dataset given to me by my boss that was trying to determine a number of things to help with revenue increase. I wanted to figure out three major questions that would help increase overall listenability to 
+the playlists used in the dataset, as well as increasing the bottom line.
+The first question I wanted to determine was; 
+1) Which year had the highest overall revenue among the three years available in the dataset.
+-- To do this I wanted to run three simple queries to determine the total net profit of each year
+
 
