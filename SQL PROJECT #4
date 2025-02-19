@@ -3,5 +3,5 @@ the playlists used in the dataset, as well as increasing the bottom line.
 The first question I wanted to determine was; 
 1) Which year had the highest overall revenue among the three years available in the dataset.
 -- To do this I wanted to run three simple queries to determine the total net profit of each year
-
+ 
 
