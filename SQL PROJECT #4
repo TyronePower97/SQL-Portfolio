@@ -3,14 +3,18 @@ the playlists used in the dataset, as well as increasing the bottom line.
 The first question I wanted to determine was; 
 1) Which year had the highest overall revenue among the three years available in the dataset.
 -- To do this I wanted to run three simple queries to determine the total net profit of each year
-SELECT sum(Total) as Total
-FROM chinook.invoices
-WHERE InvoiceDate LIKE '2009%'
-;
+    SELECT sum(Total) as Total
+    FROM chinook.invoices
+    WHERE InvoiceDate LIKE '2009%'
+    ;
 - The total for this query was 449.46.
-I ran the same query two more times only adjust the date on line 8 from '2009%' to '2010%' and then to '2011%'
-The values for 2010 and 2011 were 481.45 and 469.58
+I ran the same query two more times only adjusting the date on line 8 from '2009%' to '2010%' and then to '2011%'
+The values for 2010 and 2011 were 481.45 and 469.58 respectively
 -So from here I determined that the most lucrative year for the company was 2010, so I wanted to figure what key factors were at play that led to this.
--I decided to lay out which artists were most prevalent that year, which playlists had the most streams, and which customers were the most active. 
+-I decided to determine 
 2) 
 
+SELECT sum(Total)
+FROM chinook.Invoices
+WHERE BillingCountry LIKE '%Canada%'
+and InvoiceDate LIKE '2010%'
